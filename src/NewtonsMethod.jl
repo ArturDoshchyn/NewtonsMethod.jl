@@ -21,9 +21,10 @@ function newtonroot(f, f′; x₀ = nothing, tol = 1E-7, maxiter = 1000)
 
     #Check if converged and no NaN (e.g. if division by 0)
     if abs(xₙ₊₁-xₙ) > tol || isnan(xₙ₊₁)
-        println("Convergence failed.")
+        println("Convergence failed")
         return nothing
     else
+        println("Converged in $i iterations")
         return xₙ₊₁
     end
 end
