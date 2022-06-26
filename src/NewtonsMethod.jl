@@ -23,4 +23,6 @@ function newtonroot(f; x₀ = 0.0, tol = 1E-7, maxiter = 1000)
     return newtonroot(f, f′, x₀ = x₀, tol = tol, maxiter = maxiter)
 end
 
+export newtonroot
+
 end
