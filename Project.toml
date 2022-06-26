@@ -3,6 +3,9 @@ uuid = "c38d0e38-a56d-4bd6-a9fe-48a953581c67"
 authors = ["Artur Doshchyn <artur.doshchyn@gmail.com> and contributors"]
 version = "0.1.0"
 
+[deps]
+ForwardDiff = "f6369f11-7733-5829-9624-2563aa707210"
+
 [compat]
 julia = "1.7"
 
