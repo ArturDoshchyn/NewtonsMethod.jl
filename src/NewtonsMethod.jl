@@ -9,11 +9,6 @@ function newtonroot(f, f′; x₀ = nothing, tol = 1E-7, maxiter = 1000)
         println("No x₀ given. x₀ = $x₀ is set.")
     end
 
-    #Make sure x₀ is promoted to BigFloat if tol is BigFloat
-    if typeof(tol) == BigFloat
-        x₀ = BigFloat(x₀)
-    end
-
     #now onto the algorithm
     i = 1
     xₙ = x₀
