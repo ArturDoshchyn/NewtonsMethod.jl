@@ -5,7 +5,7 @@ using ForwardDiff
 function newtonroot(f, f′; x₀ = nothing, tol = 1E-7, maxiter = 1000)
     #check if x₀ is set
     if isnothing(x₀)
-        x₀ = 0.0
+        x₀ = zero(tol)
         println("No x₀ given. x₀ = $x₀ is set.")
     end
 
@@ -18,7 +18,9 @@ function newtonroot(f, f′; x₀ = nothing, tol = 1E-7, maxiter = 1000)
         xₙ₊₁ = xₙ - f(xₙ)/f′(xₙ)
         i += 1
     end
-    if abs(xₙ₊₁-xₙ) > tol
+
+    #Check if converged and no NaN (e.g. if division by 0)
+    if abs(xₙ₊₁-xₙ) > tol || isnan(xₙ₊₁)
         println("Convergence failed.")
         return nothing
     else
