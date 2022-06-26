@@ -5,7 +5,7 @@ using ForwardDiff
 function newtonroot(f, f′; x₀ = nothing, tol = 1E-7, maxiter = 1000)
     #check if x₀ is set
     if isnothing(x₀)
-        x₀ = zero(tol)
+        x₀ = 0.0
         println("No x₀ given. x₀ = $x₀ is set.")
     end
 
